@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package AccesoDatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author cristina
- */
 public class Servicio {
     protected Connection conexion = null;
 
@@ -22,17 +14,17 @@ public class Servicio {
     protected void conectar() throws SQLException, ClassNotFoundException {
         Class.forName("oracle.jdbc.OracleDriver");
 
-        // Conexión usando SYS como SYSDBA (obligatorio para SYS)
+        // Conexión usando proyecto_tienda como usuario
         conexion = DriverManager.getConnection(
-                "jdbc:oracle:thin:@localhost:1521/ORCLPDB1",
-                "SYS as SYSDBA",
-                "TuPassword123"
+                "jdbc:oracle:thin:@localhost:1521/ORCLPDB1", 
+                "proyecto_tienda",  // Este debe ser el usuario correcto
+                "cenfo22"           // Este debe ser la contraseña correcta
         );
     }
 
     //Desconectar a la DB
     protected void desconectar() throws SQLException {
-        if (!conexion.isClosed()) {
+        if (conexion != null && !conexion.isClosed()) {
             conexion.close();
         }
     }
