@@ -221,6 +221,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_pass_oldpassActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

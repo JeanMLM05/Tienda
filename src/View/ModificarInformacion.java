@@ -4,6 +4,9 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author cristina
@@ -168,6 +171,39 @@ public class ModificarInformacion extends javax.swing.JFrame {
 
     private void btn_changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_changeActionPerformed
         // TODO add your handling code here:
+        try {
+            String username = txt_change_usuario.getText().trim();
+            String nuevoNombre = txt_change_nombre.getText().trim();
+            String nuevoCorreo = txt_change_correo.getText().trim();
+
+            if (username.isEmpty() || nuevoNombre.isEmpty() || nuevoCorreo.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.");
+                return;
+            }
+
+            AccesoDatos.ServicioAutenticacion servicio = new AccesoDatos.ServicioAutenticacion();
+            Modelo.Usuario usuario = servicio.buscarUsuarioPorUsername(username);
+
+            if (usuario == null) {
+                JOptionPane.showMessageDialog(this, "Usuario no encontrado.");
+                servicio.cerrarConexion();
+                return;
+            }
+
+            usuario.setNombreCompleto(nuevoNombre);
+            usuario.setEmail(nuevoCorreo);
+
+            if (servicio.modificarDatosCuenta(usuario)) {
+                JOptionPane.showMessageDialog(this, "Información actualizada correctamente.");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo actualizar la información.");
+            }
+
+            servicio.cerrarConexion();
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al modificar: " + e.getMessage());
+        }
     }//GEN-LAST:event_btn_changeActionPerformed
 
     private void txt_change_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_change_correoActionPerformed

@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- You may freely edit this file. See commented blocks below for -->
-<!-- some examples of how to customize the build. -->
-<!-- If you delete it and reopen the project, it will be recreated. -->
-<!-- By default, only the Clean and Build commands use this build script. -->
-<!-- Commands such as Run, Debug, and Test only use this build script if -->
-<!-- the Compile on Save feature is turned off for the project. -->
-<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
-<!-- in the project's Project Properties dialog box. -->
 <project name="Tienda" default="default" basedir=".">
     <description>Builds, tests, and runs the project Tienda.</description>
     <import file="nbproject/build-impl.xml"/>
 
-    <!-- Declaration of the project classpath -->
+    <!-- Classpath con ojdbc11.jar -->
     <path id="project.classpath">
-        <!-- Add ojdbc11 (1).jar to classpath from Libraries folder -->
         <fileset dir="Libraries">
-            <include name="ojdbc11 (1).jar"/>
+            <include name="ojdbc11.jar"/>
         </fileset>
         <pathelement path="${dist.jar}"/>
     </path>
@@ -23,10 +14,7 @@
     <!-- Targets -->
     <target depends="compile, jar" name="default"/>
 
-    <!-- Initialization Section -->
-    <target name="-pre-init">
-        <!-- Empty placeholder for easier customization. -->
-    </target>
+    <target name="-pre-init"/>
 
     <target depends="-pre-init" name="-init-private">
         <property file="nbproject/private/config.properties"/>
@@ -36,8 +24,9 @@
 
     <target depends="-pre-init,-init-private" name="-init-user">
         <property file="${user.properties.file}"/>
-        <property name="default.javac.source" value="1.8"/>
-        <property name="default.javac.target" value="1.8"/>
+        <!-- ¡Aquí configuramos Java 20! -->
+        <property name="javac.source" value="20"/>
+        <property name="javac.target" value="20"/>
     </target>
 
     <target depends="-pre-init,-init-private,-init-user" name="-init-project">
@@ -45,28 +34,23 @@
         <property file="nbproject/project.properties"/>
     </target>
 
-    <!-- Compilation Section -->
     <target depends="-init-project" name="compile">
         <javac srcdir="${src.dir}" destdir="${build.classes.dir}" classpathref="project.classpath"/>
     </target>
 
-    <!-- JAR Creation Section -->
     <target depends="compile" name="jar">
-        <jar destfile="${dist.jar}" basedir="${build.classes.dir}" classpathref="project.classpath"/>
+        <jar destfile="${dist.jar}" basedir="${build.classes.dir}"/>
     </target>
 
-    <!-- Run Target Section -->
     <target name="run" depends="compile, jar">
         <exec executable="java">
             <arg value="-cp"/>
-            <arg value="${dist.jar}:${basedir}/Libraries/ojdbc11 (1).jar"/> <!-- Including ojdbc11 (1).jar in the run classpath -->
-            <arg value="Controlador.Tienda"/> <!-- Adjust to the name of the main class -->
+            <arg value="${dist.jar}:${basedir}/Libraries/ojdbc11.jar"/>
+            <arg value="Controlador.Tienda"/>
         </exec>
     </target>
 
-    <!-- Clean Section -->
     <target name="clean">
         <delete dir="${build.dir}"/>
     </target>
-
 </project>

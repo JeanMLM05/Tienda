@@ -15,7 +15,7 @@ public class VistaLogin {
     private String contraseña;
     private String rol;
     
-    private VistaLogin(){
+    public VistaLogin(){
         this.username = "";
         this.contraseña = "";
         this.rol = "";

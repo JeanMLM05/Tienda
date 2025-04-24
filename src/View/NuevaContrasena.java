@@ -6,6 +6,7 @@ package View;
 
 import View.VistaNuevaContrasena;
 import javax.swing.JOptionPane;
+import Modelo.Usuario;
 
 /**
  *
@@ -83,6 +84,11 @@ public class NuevaContrasena extends javax.swing.JFrame {
         txt_pass_oldpass.setBackground(new java.awt.Color(255, 255, 255));
         txt_pass_oldpass.setText("jPasswordField1");
         txt_pass_oldpass.setBorder(new javax.swing.border.MatteBorder(null));
+        txt_pass_oldpass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_pass_oldpassActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,16 +160,34 @@ public class NuevaContrasena extends javax.swing.JFrame {
 
     private void btn_passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_passActionPerformed
         // TODO add your handling code here:
-//        new VistaNuevaContrasena();
-//        if (txt_pass_newpass.equals(txt_pass_oldpass)) {
-//            char[] password = txt_pass_newpass.getPassword();
-//            String passwordCleaned = new String(password);
-//            VistaNuevaContrasena.setContraseña(passwordCleaned);
-//        }
-//        else {
-//        JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
-//        }
+        // Obtener las contraseñas ingresadas
+        String oldPass = new String(txt_pass_oldpass.getPassword());
+        String newPass = new String(txt_pass_newpass.getPassword());
+        String confirmPass = new String(txt_pass_confirmpass.getPassword());
+
+        // Validar si la contraseña nueva coincide con la confirmación
+        if (!newPass.equals(confirmPass)) {
+            JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+            return;
+        }
+
+        // Validar si la contraseña antigua coincide con la del usuario (esto se debería hacer con el usuario real)
+        String contraseñaActual = new Usuario().getContrasena(); // Reemplazar con usuario autenticado
+        if (!oldPass.equals(contraseñaActual)) {
+            JOptionPane.showMessageDialog(null, "La contraseña actual no es correcta");
+            return;
+        }
+
+        // Crear instancia de VistaNuevaContrasena y actualizar la contraseña
+        VistaNuevaContrasena nuevaVista = new VistaNuevaContrasena();
+        nuevaVista.setContraseña(newPass);
+
+        JOptionPane.showMessageDialog(null, "Contraseña actualizada exitosamente");
     }//GEN-LAST:event_btn_passActionPerformed
+
+    private void txt_pass_oldpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_pass_oldpassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_pass_oldpassActionPerformed
 
     /**
      * @param args the command line arguments

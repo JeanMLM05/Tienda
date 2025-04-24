@@ -5,6 +5,9 @@
 package View;
 
 import javax.swing.JOptionPane;
+import java.time.LocalDate;
+import java.sql.Connection;
+import java.sql.CallableStatement;
 
 /**
  *
@@ -52,6 +55,9 @@ public class Login extends javax.swing.JFrame {
         rbtn_admin = new javax.swing.JRadioButton();
         rbtn_vendor = new javax.swing.JRadioButton();
         btn_login = new javax.swing.JButton();
+        txt_dia = new javax.swing.JTextField();
+        txt_mes = new javax.swing.JTextField();
+        txt_anio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -166,7 +172,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         txt_registro_pass.setBackground(new java.awt.Color(255, 255, 255));
-        txt_registro_pass.setText("jPasswordField1");
+        txt_registro_pass.setText("  jPasswordField1");
         txt_registro_pass.setBorder(new javax.swing.border.MatteBorder(null));
 
         rbtn_admin.setBackground(new java.awt.Color(255, 255, 255));
@@ -192,6 +198,33 @@ public class Login extends javax.swing.JFrame {
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_loginActionPerformed(evt);
+            }
+        });
+
+        txt_dia.setBackground(new java.awt.Color(255, 255, 255));
+        txt_dia.setText(" dd");
+        txt_dia.setBorder(new javax.swing.border.MatteBorder(null));
+        txt_dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_diaActionPerformed(evt);
+            }
+        });
+
+        txt_mes.setBackground(new java.awt.Color(255, 255, 255));
+        txt_mes.setText(" mm");
+        txt_mes.setBorder(new javax.swing.border.MatteBorder(null));
+        txt_mes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_mesActionPerformed(evt);
+            }
+        });
+
+        txt_anio.setBackground(new java.awt.Color(255, 255, 255));
+        txt_anio.setText(" aaaa");
+        txt_anio.setBorder(new javax.swing.border.MatteBorder(null));
+        txt_anio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_anioActionPerformed(evt);
             }
         });
 
@@ -225,13 +258,20 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(txt_registro_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txt_login_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txt_registro_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txt_registro_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txt_registro_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txt_registro_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(rbtn_admin)
                                     .addGap(18, 18, 18)
-                                    .addComponent(rbtn_vendor)))
+                                    .addComponent(rbtn_vendor))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txt_dia, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txt_mes, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txt_anio))
+                                    .addComponent(txt_registro_cedula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(243, Short.MAX_VALUE))
         );
@@ -265,7 +305,11 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(lbl_registro_cedula)
                     .addComponent(txt_registro_cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(lbl_registro_dob)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_registro_dob)
+                    .addComponent(txt_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_registro_correo)
@@ -311,6 +355,72 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registroActionPerformed
         // TODO add your handling code here:
+        try {
+            // Obtener datos del formulario
+            String username = txt_registro_usuario.getText().trim();
+            String nombre = txt_registro_nombre.getText().trim();
+            String cedula = txt_registro_cedula.getText().trim();
+            String correo = txt_registro_correo.getText().trim();
+            String contraseña = new String(txt_registro_pass.getPassword()).trim();
+            String rol = rbtn_admin.isSelected() ? "Administrador" : rbtn_vendor.isSelected() ? "Comprador" : "";
+
+            int dia = Integer.parseInt(txt_dia.getText().trim());
+            int mes = Integer.parseInt(txt_mes.getText().trim());
+            int anio = Integer.parseInt(txt_anio.getText().trim());
+
+            LocalDate fechaNacimiento = LocalDate.of(anio, mes, dia);
+
+            // Validación básica
+            if (username.isEmpty() || nombre.isEmpty() || cedula.isEmpty() || correo.isEmpty()
+                    || contraseña.isEmpty() || rol.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.");
+                return;
+            }
+
+            AccesoDatos.ServicioAutenticacion servicio = new AccesoDatos.ServicioAutenticacion();
+
+            // Verificar si ya existe un administrador
+            if (rol.equalsIgnoreCase("Administrador") && servicio.yaExisteAdministrador()) {
+                JOptionPane.showMessageDialog(this, "Ya existe un administrador registrado. Solo se permite uno.");
+                servicio.cerrarConexion();
+                return;
+            }
+
+            // Crear objeto usuario
+            Modelo.Usuario nuevoUsuario = new Modelo.Usuario(username, nombre, cedula, fechaNacimiento, correo, contraseña, rol);
+
+            // Llamar servicio de registro
+            boolean registrado = servicio.registrarUsuario(nuevoUsuario);
+
+            if (registrado) {
+                // Insertar en tabla correspondiente según rol
+                Connection conn = servicio.getConexion();
+                CallableStatement stmt = null;
+
+                if (rol.equalsIgnoreCase("Administrador")) {
+                    stmt = conn.prepareCall("{call insertar_administrador(?)}");
+                    stmt.setString(1, username);
+                    stmt.execute();
+                } else if (rol.equalsIgnoreCase("Comprador")) {
+                    stmt = conn.prepareCall("{call insertar_comprador(?, ?)}");
+                    stmt.setString(1, username);
+                    stmt.setDate(2, java.sql.Date.valueOf(LocalDate.now()));
+                    stmt.execute();
+                }
+
+                JOptionPane.showMessageDialog(this, "Registro exitoso.");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se pudo registrar el usuario.");
+            }
+
+            servicio.cerrarConexion();
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Formato inválido en la fecha. Use solo números.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Error al registrar usuario: " + e.getMessage());
+        }
     }//GEN-LAST:event_btn_registroActionPerformed
 
     private void txt_login_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_login_usuarioActionPerformed
@@ -339,8 +449,46 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
-        //JOptionPane.showMessageDialog(null, "La informacion ingresada es" + txt_id.getText());
+        String username = txt_login_usuario.getText().trim();
+        String password = new String(txt_login_pass.getPassword());
+
+        // Validación de campos
+        if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese usuario y contraseña.");
+            return;
+        }
+
+        // Lógica de autenticación
+        AccesoDatos.ServicioAutenticacion servicio = new AccesoDatos.ServicioAutenticacion();
+        Modelo.Usuario usuario = servicio.loguearUsuario(username, password);
+
+        if (usuario != null) {
+            // Crear vista temporal para mantener los datos
+            VistaLogin vista = new VistaLogin();
+            vista.setUsername(usuario.getUsername());
+            vista.setContraseña(usuario.getContrasena());
+            vista.setRol(usuario.getRol());
+
+            JOptionPane.showMessageDialog(this, "Bienvenido " + vista.getUsername() + " (" + vista.getRol() + ")");
+            // Colocar rita a la vista de inicio de Admin (algun panel de edicion) o de comprador (catalogo)
+        } else {
+            JOptionPane.showMessageDialog(this, "Credenciales incorrectas.");
+        }
+
+        servicio.cerrarConexion();
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void txt_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_diaActionPerformed
+
+    private void txt_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_mesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_mesActionPerformed
+
+    private void txt_anioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_anioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_anioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,8 +543,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbtn_admin;
     private javax.swing.JRadioButton rbtn_vendor;
     private javax.swing.JLabel registro_heading;
+    private javax.swing.JTextField txt_anio;
+    private javax.swing.JTextField txt_dia;
     private javax.swing.JPasswordField txt_login_pass;
     private javax.swing.JTextField txt_login_usuario;
+    private javax.swing.JTextField txt_mes;
     private javax.swing.JTextField txt_registro_cedula;
     private javax.swing.JTextField txt_registro_correo;
     private javax.swing.JTextField txt_registro_nombre;

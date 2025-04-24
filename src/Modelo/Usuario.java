@@ -15,11 +15,9 @@ public class Usuario {
     protected String username;
     protected String nombreCompleto;
     protected String cedulaIdentidad;
-    // Tipo de dato que permite calcular la edad
     protected LocalDate fechaNacimiento;
     protected String email;
-    protected String contraseña;
-    // Este atributo puede ser util a la hora de otorgar permisos:
+    protected String contrasena;
     protected String rol;
 
     public Usuario() {
@@ -28,17 +26,17 @@ public class Usuario {
         this.cedulaIdentidad = "";
         this.fechaNacimiento = LocalDate.now();
         this.email = "";
-        this.contraseña = "";
+        this.contrasena = "";
         this.rol = "";
     }
 
-    public Usuario(String username, String nombreCompleto, String cedulaIdentidad, LocalDate fechaNacimiento, String email, String contraseña, String rol) {
+    public Usuario(String username, String nombreCompleto, String cedulaIdentidad, LocalDate fechaNacimiento, String email, String contrasena, String rol) {
         this.username = username;
         this.nombreCompleto = nombreCompleto;
         this.cedulaIdentidad = cedulaIdentidad;
         this.fechaNacimiento = fechaNacimiento;
         this.email = email;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.rol = rol;
     }
 
@@ -62,8 +60,8 @@ public class Usuario {
         return email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
     public String getRol() {
@@ -90,8 +88,8 @@ public class Usuario {
         this.email = email;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public void setRol(String rol) {
@@ -100,7 +98,15 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "username=" + username + ", nombreCompleto=" + nombreCompleto + ", cedulaIdentidad=" + cedulaIdentidad + ", fechaNacimiento=" + fechaNacimiento + ", email=" + email + ", contraseña=" + contraseña + ", rol=" + rol + '}';
+        return "Usuario{"
+                + "username='" + username + '\''
+                + ", nombreCompleto='" + nombreCompleto + '\''
+                + ", cedulaIdentidad='" + cedulaIdentidad + '\''
+                + ", fechaNacimiento=" + fechaNacimiento
+                + ", email='" + email + '\''
+                + ", contrasena='" + contrasena + '\''
+                + ", rol='" + rol + '\''
+                + '}';
     }
-    
+
 }
