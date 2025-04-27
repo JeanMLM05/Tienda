@@ -8,6 +8,6 @@ package View;
  *
  * @author Jeanm
  */
-public class VistaCatalogo {
+public class VistaTiendaPrincipal {
     
 }

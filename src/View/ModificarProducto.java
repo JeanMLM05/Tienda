@@ -28,15 +28,17 @@ public class ModificarProducto extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Producto_head = new javax.swing.JLabel();
-        editarNombreProducto = new javax.swing.JTextField();
+        nombreProductoMod = new javax.swing.JTextField();
         Producto_head1 = new javax.swing.JLabel();
         Producto_head2 = new javax.swing.JLabel();
-        editarPrecioProducto = new javax.swing.JTextField();
+        precioProducto_field = new javax.swing.JTextField();
         Producto_head3 = new javax.swing.JLabel();
-        editarDescripcionProducto = new javax.swing.JTextField();
+        descripcionProductoMod = new javax.swing.JTextField();
         Producto_head4 = new javax.swing.JLabel();
-        editarCantidadProducto = new javax.swing.JTextField();
-        btn_editarInfoProducto = new javax.swing.JButton();
+        cantidadProductoMod = new javax.swing.JTextField();
+        btn_infoProducto = new javax.swing.JButton();
+        Producto_head5 = new javax.swing.JLabel();
+        categoriaMod = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,12 +48,13 @@ public class ModificarProducto extends javax.swing.JFrame {
         Producto_head.setBackground(new java.awt.Color(255, 255, 255));
         Producto_head.setFont(new java.awt.Font("Muna", 1, 18)); // NOI18N
         Producto_head.setForeground(new java.awt.Color(0, 153, 255));
-        Producto_head.setText("MODIFICAR PRODUCTO");
+        Producto_head.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Producto_head.setText("MODIFICAR  PRODUCTO");
 
-        editarNombreProducto.setText("Ingrese nombre del producto");
-        editarNombreProducto.addActionListener(new java.awt.event.ActionListener() {
+        nombreProductoMod.setText("Ingrese nombre del producto");
+        nombreProductoMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarNombreProductoActionPerformed(evt);
+                nombreProductoModActionPerformed(evt);
             }
         });
 
@@ -65,10 +68,10 @@ public class ModificarProducto extends javax.swing.JFrame {
         Producto_head2.setForeground(new java.awt.Color(102, 102, 102));
         Producto_head2.setText("Precio del producto:");
 
-        editarPrecioProducto.setText("Ingrese precio del producto");
-        editarPrecioProducto.addActionListener(new java.awt.event.ActionListener() {
+        precioProducto_field.setText("Ingrese precio del producto");
+        precioProducto_field.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarPrecioProductoActionPerformed(evt);
+                precioProducto_fieldActionPerformed(evt);
             }
         });
 
@@ -77,10 +80,10 @@ public class ModificarProducto extends javax.swing.JFrame {
         Producto_head3.setForeground(new java.awt.Color(102, 102, 102));
         Producto_head3.setText("Descripcion del producto:");
 
-        editarDescripcionProducto.setText("Ingrese una descripcion");
-        editarDescripcionProducto.addActionListener(new java.awt.event.ActionListener() {
+        descripcionProductoMod.setText("Ingrese una descripcion");
+        descripcionProductoMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarDescripcionProductoActionPerformed(evt);
+                descripcionProductoModActionPerformed(evt);
             }
         });
 
@@ -89,20 +92,32 @@ public class ModificarProducto extends javax.swing.JFrame {
         Producto_head4.setForeground(new java.awt.Color(102, 102, 102));
         Producto_head4.setText("Cantidad del producto:");
 
-        editarCantidadProducto.setText("Ingrese cantidad ");
-        editarCantidadProducto.addActionListener(new java.awt.event.ActionListener() {
+        cantidadProductoMod.setText("Ingrese cantidad");
+        cantidadProductoMod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarCantidadProductoActionPerformed(evt);
+                cantidadProductoModActionPerformed(evt);
             }
         });
 
-        btn_editarInfoProducto.setBackground(new java.awt.Color(0, 153, 255));
-        btn_editarInfoProducto.setFont(new java.awt.Font("Muna", 1, 13)); // NOI18N
-        btn_editarInfoProducto.setForeground(new java.awt.Color(255, 255, 255));
-        btn_editarInfoProducto.setText("ENVIAR");
-        btn_editarInfoProducto.addActionListener(new java.awt.event.ActionListener() {
+        btn_infoProducto.setBackground(new java.awt.Color(0, 153, 255));
+        btn_infoProducto.setFont(new java.awt.Font("Muna", 1, 13)); // NOI18N
+        btn_infoProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btn_infoProducto.setText("ENVIAR");
+        btn_infoProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarInfoProductoActionPerformed(evt);
+                btn_infoProductoActionPerformed(evt);
+            }
+        });
+
+        Producto_head5.setBackground(new java.awt.Color(255, 255, 255));
+        Producto_head5.setFont(new java.awt.Font("Muna", 1, 13)); // NOI18N
+        Producto_head5.setForeground(new java.awt.Color(102, 102, 102));
+        Producto_head5.setText("Categoria del producto:");
+
+        categoriaMod.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione categoria", "Alimentos frescos", "Lácteos y sus derivados", "Alimentos secos y enlatados", "Snacks y golosinas", "Bebidas", "Productos congelados", "Productos de limpieza", "Higiene personal", " " }));
+        categoriaMod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoriaModActionPerformed(evt);
             }
         });
 
@@ -110,57 +125,65 @@ public class ModificarProducto extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Producto_head3)
-                            .addComponent(Producto_head4)
-                            .addComponent(Producto_head2))
-                        .addGap(20, 20, 20))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Producto_head1)
-                        .addGap(45, 45, 45)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(editarNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editarPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editarCantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editarDescripcionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(301, Short.MAX_VALUE)
+                .addComponent(btn_infoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_editarInfoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(Producto_head)
-                        .addGap(73, 73, 73))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Producto_head3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Producto_head4))
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(descripcionProductoMod)
+                                    .addComponent(cantidadProductoMod)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Producto_head1)
+                                    .addComponent(Producto_head2)
+                                    .addComponent(Producto_head5))
+                                .addGap(34, 34, 34)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nombreProductoMod)
+                                    .addComponent(precioProducto_field)
+                                    .addComponent(categoriaMod, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(Producto_head)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(49, 49, 49)
                 .addComponent(Producto_head)
-                .addGap(56, 56, 56)
+                .addGap(48, 48, 48)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreProductoMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Producto_head1))
-                .addGap(37, 37, 37)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(precioProducto_field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Producto_head2))
-                .addGap(58, 58, 58)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarDescripcionProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Producto_head5)
+                    .addComponent(categoriaMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(descripcionProductoMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Producto_head3))
-                .addGap(57, 57, 57)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(editarCantidadProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cantidadProductoMod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Producto_head4))
                 .addGap(34, 34, 34)
-                .addComponent(btn_editarInfoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_infoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
@@ -169,40 +192,44 @@ public class ModificarProducto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
+                .addGap(134, 134, 134)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(79, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void editarNombreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarNombreProductoActionPerformed
+    private void nombreProductoModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreProductoModActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_editarNombreProductoActionPerformed
+    }//GEN-LAST:event_nombreProductoModActionPerformed
 
-    private void editarPrecioProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPrecioProductoActionPerformed
+    private void precioProducto_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioProducto_fieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_editarPrecioProductoActionPerformed
+    }//GEN-LAST:event_precioProducto_fieldActionPerformed
 
-    private void editarDescripcionProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarDescripcionProductoActionPerformed
+    private void descripcionProductoModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descripcionProductoModActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_editarDescripcionProductoActionPerformed
+    }//GEN-LAST:event_descripcionProductoModActionPerformed
 
-    private void editarCantidadProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarCantidadProductoActionPerformed
+    private void cantidadProductoModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantidadProductoModActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_editarCantidadProductoActionPerformed
+    }//GEN-LAST:event_cantidadProductoModActionPerformed
 
-    private void btn_editarInfoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarInfoProductoActionPerformed
+    private void btn_infoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_infoProductoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_editarInfoProductoActionPerformed
+    }//GEN-LAST:event_btn_infoProductoActionPerformed
+
+    private void categoriaModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaModActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_categoriaModActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,11 +272,13 @@ public class ModificarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel Producto_head2;
     private javax.swing.JLabel Producto_head3;
     private javax.swing.JLabel Producto_head4;
-    private javax.swing.JButton btn_editarInfoProducto;
-    private javax.swing.JTextField editarCantidadProducto;
-    private javax.swing.JTextField editarDescripcionProducto;
-    private javax.swing.JTextField editarNombreProducto;
-    private javax.swing.JTextField editarPrecioProducto;
+    private javax.swing.JLabel Producto_head5;
+    private javax.swing.JButton btn_infoProducto;
+    private javax.swing.JTextField cantidadProductoMod;
+    private javax.swing.JComboBox<String> categoriaMod;
+    private javax.swing.JTextField descripcionProductoMod;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField nombreProductoMod;
+    private javax.swing.JTextField precioProducto_field;
     // End of variables declaration//GEN-END:variables
 }

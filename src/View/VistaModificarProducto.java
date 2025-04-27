@@ -9,51 +9,61 @@ package View;
  * @author Jeanm
  */
 public class VistaModificarProducto {
-    private String editarNombreProducto;
-    private int editarPrecioProducto;
-    private String editarDescripcionProducto;
-    private int editarCantidadProducto;
+    private String nombreProductoMod;
+    private double precioProductoMod;
+    private String descripcionProductoMod;
+    private int cantidadProductoMod;
+    private String categoriaMod;
 
     public VistaModificarProducto() {
         
     }
 
-    public VistaModificarProducto(String editarNombreProducto, int editarPrecioProducto, String editarDescripcionProducto, int editarCantidadProducto) {
-        this.editarNombreProducto = editarNombreProducto;
-        this.editarPrecioProducto = editarPrecioProducto;
-        this.editarDescripcionProducto = editarDescripcionProducto;
-        this.editarCantidadProducto = editarCantidadProducto;
+    public VistaModificarProducto(String nombreProductoMod, double precioProductoMod, String descripcionProductoMod, int cantidadProductoMod, String categoriaMod) {
+        this.nombreProductoMod = nombreProductoMod;
+        this.precioProductoMod = precioProductoMod;
+        this.descripcionProductoMod = descripcionProductoMod;
+        this.cantidadProductoMod = cantidadProductoMod;
+        this.categoriaMod = categoriaMod;
     }
 
-    public String getEditarNombreProducto() {
-        return editarNombreProducto;
+    public String getNombreProductoMod() {
+        return nombreProductoMod;
     }
 
-    public int getEditarPrecioProducto() {
-        return editarPrecioProducto;
+    public double getPrecioProductoMod() {
+        return precioProductoMod;
     }
 
-    public String getEditarDescripcionProducto() {
-        return editarDescripcionProducto;
+    public String getDescripcionProductoMod() {
+        return descripcionProductoMod;
     }
 
-    public int getEditarCantidadProducto() {
-        return editarCantidadProducto;
+    public int getCantidadProductoMod() {
+        return cantidadProductoMod;
     }
 
-    public void setEditarNombreProducto(String editarNombreProducto) {
-        this.editarNombreProducto = editarNombreProducto;
+    public String getCategoriaMod() {
+        return categoriaMod;
     }
 
-    public void setEditarPrecioProducto(int editarPrecioProducto) {
-        this.editarPrecioProducto = editarPrecioProducto;
+    public void setNombreProductoMod(String nombreProductoMod) {
+        this.nombreProductoMod = nombreProductoMod;
     }
 
-    public void setEditarDescripcionProducto(String editarDescripcionProducto) {
-        this.editarDescripcionProducto = editarDescripcionProducto;
+    public void setPrecioProductoMod(double precioProductoMod) {
+        this.precioProductoMod = precioProductoMod;
     }
 
-    public void setEditarCantidadProducto(int editarCantidadProducto) {
-        this.editarCantidadProducto = editarCantidadProducto;
+    public void setDescripcionProductoMod(String descripcionProductoMod) {
+        this.descripcionProductoMod = descripcionProductoMod;
+    }
+
+    public void setCantidadProductoMod(int cantidadProductoMod) {
+        this.cantidadProductoMod = cantidadProductoMod;
+    }
+
+    public void setCategoriaMod(String categoriaMod) {
+        this.categoriaMod = categoriaMod;
     }
 }

@@ -13,10 +13,21 @@ public class VistaRegistrarProducto {
     private double precioProducto;
     private String descripcionProducto;
     private int cantidadProducto;
+    private String categoria;
 
     public VistaRegistrarProducto() {
         
     }
+
+    public VistaRegistrarProducto(String nombreProducto, double precioProducto, String descripcionProducto, int cantidadProducto, String categoria) {
+        this.nombreProducto = nombreProducto;
+        this.precioProducto = precioProducto;
+        this.descripcionProducto = descripcionProducto;
+        this.cantidadProducto = cantidadProducto;
+        this.categoria = categoria;
+    }
+    
+    
 
     public String getNombreProducto() {
         return nombreProducto;
@@ -34,6 +45,10 @@ public class VistaRegistrarProducto {
         return cantidadProducto;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
     public void setNombreProducto(String nombreProducto) {
         this.nombreProducto = nombreProducto;
     }
@@ -48,5 +63,9 @@ public class VistaRegistrarProducto {
 
     public void setCantidadProducto(int cantidadProducto) {
         this.cantidadProducto = cantidadProducto;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

@@ -31,10 +31,10 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
         nombreProductoUser = new javax.swing.JTextField();
         Producto_head1 = new javax.swing.JLabel();
         Producto_head2 = new javax.swing.JLabel();
-        categoriaProductoUser = new javax.swing.JTextField();
         btn_buscarProducto = new javax.swing.JButton();
         Producto_head3 = new javax.swing.JLabel();
         nombreVendedorUser = new javax.swing.JTextField();
+        categoriaProductoUser = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,13 +63,6 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
         Producto_head2.setForeground(new java.awt.Color(102, 102, 102));
         Producto_head2.setText("Categoria:");
 
-        categoriaProductoUser.setText("Ingrese categoria del producto");
-        categoriaProductoUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                categoriaProductoUserActionPerformed(evt);
-            }
-        });
-
         btn_buscarProducto.setBackground(new java.awt.Color(0, 153, 255));
         btn_buscarProducto.setFont(new java.awt.Font("Muna", 1, 13)); // NOI18N
         btn_buscarProducto.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,6 +85,13 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
             }
         });
 
+        categoriaProductoUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione categoria", "Alimentos frescos", "Lácteos y sus derivados", "Alimentos secos y enlatados", "Snacks y golosinas", "Bebidas", "Productos congelados", "Productos de limpieza", "Higiene personal", " " }));
+        categoriaProductoUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                categoriaProductoUserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -102,11 +102,11 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
                     .addComponent(Producto_head1)
                     .addComponent(Producto_head2)
                     .addComponent(Producto_head3))
-                .addGap(42, 42, 42)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(nombreVendedorUser)
-                    .addComponent(categoriaProductoUser)
-                    .addComponent(nombreProductoUser))
+                    .addComponent(nombreProductoUser)
+                    .addComponent(categoriaProductoUser, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -116,22 +116,22 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Producto_head)
-                        .addGap(97, 97, 97))))
+                        .addGap(103, 103, 103))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(55, 55, 55)
                 .addComponent(Producto_head)
-                .addGap(61, 61, 61)
+                .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombreProductoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Producto_head1))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(categoriaProductoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Producto_head2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                    .addComponent(Producto_head2)
+                    .addComponent(categoriaProductoUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nombreVendedorUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Producto_head3))
@@ -144,17 +144,17 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(149, 149, 149)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(157, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addGap(147, 147, 147))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(117, 117, 117)
+                .addGap(112, 112, 112)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         pack();
@@ -164,17 +164,18 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreProductoUserActionPerformed
 
-    private void categoriaProductoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaProductoUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_categoriaProductoUserActionPerformed
-
     private void btn_buscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarProductoActionPerformed
-        // TODO add your handling code here:
+       EliminarProducto ventanaEliminar = new EliminarProducto();
+    ventanaEliminar.setVisible(true);
     }//GEN-LAST:event_btn_buscarProductoActionPerformed
 
     private void nombreVendedorUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreVendedorUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreVendedorUserActionPerformed
+
+    private void categoriaProductoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaProductoUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_categoriaProductoUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,7 +218,7 @@ public class BuscarProductosUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel Producto_head2;
     private javax.swing.JLabel Producto_head3;
     private javax.swing.JButton btn_buscarProducto;
-    private javax.swing.JTextField categoriaProductoUser;
+    private javax.swing.JComboBox<String> categoriaProductoUser;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nombreProductoUser;
     private javax.swing.JTextField nombreVendedorUser;

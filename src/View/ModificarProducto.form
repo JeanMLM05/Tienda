@@ -24,18 +24,18 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="216" max="32767" attributes="0"/>
+              <EmptySpace pref="192" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="79" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="85" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,72 +54,83 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="301" max="32767" attributes="0"/>
+                  <Component id="btn_infoProducto" min="-2" pref="83" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Producto_head3" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="Producto_head4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="Producto_head2" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Producto_head3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Producto_head4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="descripcionProductoMod" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="cantidadProductoMod" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="Producto_head1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Producto_head2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="Producto_head5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="nombreProductoMod" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="precioProducto_field" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="categoriaMod" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="Producto_head1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="editarNombreProducto" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                      <Component id="editarPrecioProducto" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                      <Component id="editarCantidadProducto" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                      <Component id="editarDescripcionProducto" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btn_editarInfoProducto" min="-2" pref="83" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
                           <Component id="Producto_head" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="Producto_head" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editarNombreProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nombreProductoMod" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Producto_head1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editarPrecioProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioProducto_field" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Producto_head2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editarDescripcionProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Producto_head5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="categoriaMod" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="descripcionProductoMod" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Producto_head3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="editarCantidadProducto" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cantidadProductoMod" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Producto_head4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="btn_editarInfoProducto" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btn_infoProducto" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace pref="55" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -137,15 +148,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="MODIFICAR PRODUCTO"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="MODIFICAR  PRODUCTO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="editarNombreProducto">
+        <Component class="javax.swing.JTextField" name="nombreProductoMod">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingrese nombre del producto"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarNombreProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreProductoModActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Producto_head1">
@@ -176,12 +188,12 @@
             <Property name="text" type="java.lang.String" value="Precio del producto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="editarPrecioProducto">
+        <Component class="javax.swing.JTextField" name="precioProducto_field">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingrese precio del producto"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarPrecioProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="precioProducto_fieldActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Producto_head3">
@@ -198,12 +210,12 @@
             <Property name="text" type="java.lang.String" value="Descripcion del producto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="editarDescripcionProducto">
+        <Component class="javax.swing.JTextField" name="descripcionProductoMod">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ingrese una descripcion"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarDescripcionProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="descripcionProductoModActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="Producto_head4">
@@ -220,15 +232,15 @@
             <Property name="text" type="java.lang.String" value="Cantidad del producto:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="editarCantidadProducto">
+        <Component class="javax.swing.JTextField" name="cantidadProductoMod">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ingrese cantidad "/>
+            <Property name="text" type="java.lang.String" value="Ingrese cantidad"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarCantidadProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cantidadProductoModActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_editarInfoProducto">
+        <Component class="javax.swing.JButton" name="btn_infoProducto">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -242,8 +254,46 @@
             <Property name="text" type="java.lang.String" value="ENVIAR"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_editarInfoProductoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_infoProductoActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Producto_head5">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Muna" size="13" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Categoria del producto:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="categoriaMod">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="10">
+                <StringItem index="0" value="Seleccione categoria"/>
+                <StringItem index="1" value="Alimentos frescos"/>
+                <StringItem index="2" value="L&#xe1;cteos y sus derivados"/>
+                <StringItem index="3" value="Alimentos secos y enlatados"/>
+                <StringItem index="4" value="Snacks y golosinas"/>
+                <StringItem index="5" value="Bebidas"/>
+                <StringItem index="6" value="Productos congelados"/>
+                <StringItem index="7" value="Productos de limpieza"/>
+                <StringItem index="8" value="Higiene personal"/>
+                <StringItem index="9" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="categoriaModActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
