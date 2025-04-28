@@ -32,7 +32,7 @@ public class Catalogo extends javax.swing.JFrame {
         jButton28 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        CatalogoArray = new javax.swing.JTable();
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -67,7 +67,7 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        CatalogoArray.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Manzanas Rojas	", "Alimentos frescos",  new Double(1200.0),  new Double(1.0), "25x20x10", null, "SuperMercado CR", null,  new Integer(5000)},
                 {"Yogurt Natural 1L	", "Lácteos y derivados	",  new Double(1600.0),  new Double(1.0), "10x10x25	", null, "Lácteos Los Alpes	", null,  new Integer(60)},
@@ -139,11 +139,11 @@ public class Catalogo extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(50);
-        jTable1.setSelectionBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setShowHorizontalLines(true);
-        jTable1.setShowVerticalLines(true);
-        jScrollPane1.setViewportView(jTable1);
+        CatalogoArray.setRowHeight(50);
+        CatalogoArray.setSelectionBackground(new java.awt.Color(204, 204, 204));
+        CatalogoArray.setShowHorizontalLines(true);
+        CatalogoArray.setShowVerticalLines(true);
+        jScrollPane1.setViewportView(CatalogoArray);
 
         jButton29.setForeground(new java.awt.Color(102, 102, 102));
         jButton29.setText("Carrito");
@@ -277,6 +277,7 @@ public class Catalogo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable CatalogoArray;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
@@ -285,7 +286,6 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
